@@ -4,14 +4,18 @@ import sun.reflect.ReflectionFactory;
 
 import java.lang.reflect.Constructor;
 import java.util.Collection;
+import java.util.Map;
 
 public class CloneUtil {
     public static <T> T deepClone(T object) throws Exception {
         return switch (object) {
             case null -> null;
             case Collection c -> (T) CollectionUtil.copyCollection(c);
+            case Map m -> (T) MapUtil.copyMap(m);
+            case Enum e -> (T) e;
             case Number n -> (T) n;
             case String s -> (T) s;
+            case Boolean b -> (T) b;
             default -> deepClone(object, (Class<T>) object.getClass());
         };
 
