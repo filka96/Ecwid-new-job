@@ -16,9 +16,9 @@ public class CloneUtil {
             case Number n -> (T) n;
             case String s -> (T) s;
             case Boolean b -> (T) b;
+            case Character c ->(T)c;
             default -> deepClone(object, (Class<T>) object.getClass());
         };
-
     }
 
     private static <T> T deepClone(T object, Class<T> tClass) throws Exception {
