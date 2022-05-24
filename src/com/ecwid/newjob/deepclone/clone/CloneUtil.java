@@ -23,8 +23,8 @@ public class CloneUtil {
 
     private static <T> T deepClone(T object, Class<T> tClass) throws Exception {
         T newEntity;
-        ReflectionFactory reflectionFactory = ReflectionFactory.getReflectionFactory();
-        Constructor<?> constructor = reflectionFactory.newConstructorForSerialization(tClass, Object.class.getConstructor((Class[]) null));
+        var reflectionFactory = ReflectionFactory.getReflectionFactory();
+        var constructor = reflectionFactory.newConstructorForSerialization(tClass, Object.class.getConstructor((Class[]) null));
         newEntity = (T) constructor.newInstance();
         FieldUtil.copyFields(object, newEntity, tClass);
         return newEntity;
