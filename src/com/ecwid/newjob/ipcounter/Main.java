@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) {
-        var filePath = "C:\\Users\\filka\\Downloads\\ip_addresses";
+        var filePath = "ip_addresses";
 //        measureTime("readOnlyLines", CounterUtil::readOnlyLines, filePath);
         measureTime("count", CounterUtil::count, filePath);
     }

@@ -10,7 +10,7 @@ public class CounterUtil {
     private static final short BYTE_SIZE = 256;
 
     /**
-     * +|- 64mb/s
+     * +|- 64mb/s 20%
      */
     public static long count(String filePath) {
         var lineCount = 0L;
